@@ -1,1 +1,3 @@
 # PythonHW
+
+Panainte Diana-Teodora
