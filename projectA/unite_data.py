@@ -29,6 +29,25 @@ def initialize_country_data():
 
 
 def unite_data_about_country(country, capital_city, area, density, government, language, time_zone, neighbour, population):
+    """
+    Create a dictionary with information about a country.
+
+    This function initializes a dictionary containing various details about a country,
+    such as its name, capital city, population, population density, area, neighbors,
+    language, time zone, and type of government.
+
+    :param country: The name of the country.
+    :param capital_city: The capital city of the country.
+    :param area: The area of the country.
+    :param density: The density of the country.
+    :param government: The type of government in the country.
+    :param language: The official language spoken in the country.
+    :param time_zone: The time zone of the country.
+    :param neighbour: A list of neighboring countries.
+    :param population: The population of the country.
+
+    :return: A dictionary containing information about the specified country.
+    """
     initialize_country_data()
     #######################################################################
     country_data['country_name'] = country

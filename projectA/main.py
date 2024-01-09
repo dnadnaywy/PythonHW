@@ -26,8 +26,6 @@ for i in range(len(countries)):
         country = countries[i].replace('_', ' ')
     else:
         country = countries[i]
-    if country == 'Danish Realm':
-        country = 'Denmark'
     try:
         for key, value in capital_cities.items():
             if key == country or key in country:

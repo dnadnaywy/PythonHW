@@ -3,6 +3,16 @@ import re
 
 
 def crawl_wikipedia(url):
+    """
+    Crawl a Wikipedia page and save its HTML content to a file.
+
+    This function sends a GET request to the specified URL, retrieves the HTML content,
+    and saves it to a file named 'countries_links.txt' using UTF-16 encoding.
+
+    :param url: The URL of the Wikipedia page to crawl.
+
+    :return: None
+    """
     response = requests.get(url)
 
     if response.status_code == 200:
@@ -25,6 +35,16 @@ countries_with_link = []
 
 
 def get_country_link(string):
+    """
+    Extract a country link from an HTML string.
+
+    This function searches for a country link in the provided HTML string using
+    a regular expression. If a match is found, the extracted link is returned.
+
+    :param string: The HTML string to search for the country link.
+
+    :return: The extracted country link.
+    """
     match = re.search(r'href="/wiki/([^"]+)"', string)
 
     if match:
@@ -35,6 +55,11 @@ def get_country_link(string):
 
 
 def get_countries_links():
+    """
+    Parse and search for all the country links in the url from Wikipedia.
+
+    :return: A dictionary containing links about all the countries.
+    """
     file_path = 'countries_links.txt'
     file = open(file_path, 'r', encoding='utf-16')
     html_line = file.readline()

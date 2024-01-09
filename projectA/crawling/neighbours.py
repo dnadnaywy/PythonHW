@@ -5,6 +5,16 @@ neighbours = {}
 
 
 def crawl_wikipedia(url):
+    """
+    Crawl a Wikipedia page and save its HTML content to a file.
+
+    This function sends a GET request to the specified URL, retrieves the HTML content,
+    and saves it to a file named 'crawling/neighbours.txt' using UTF-16 encoding.
+
+    :param url: The URL of the Wikipedia page to crawl.
+
+    :return: None
+    """
     response = requests.get(url)
 
     if response.status_code == 200:
@@ -29,6 +39,16 @@ def print_dict(dict):
 
 
 def get_country_name(string):
+    """
+    Extract the name of a country from an HTML string.
+
+    This function uses a regular expression to search for a specific pattern
+    in the provided HTML string and extracts the country name.
+
+    :param string: The HTML string to search for the country name.
+
+    :return: The extracted country name.
+    """
     match = re.search(r'title="([^"]+)"', string)
 
     if match:
@@ -39,6 +59,16 @@ def get_country_name(string):
 
 
 def get_neighbours(string):
+    """
+    Extract the neighbours of a country from an HTML string.
+
+    This function uses a regular expression to search for a specific pattern
+    in the provided HTML string and extracts the neighbours of the country.
+
+    :param string: The HTML string to search for the neighbours of the country.
+
+    :return: The extracted neighbours of the country.
+    """
     matches = re.findall(r'title="([^"]+)"', string)
 
     if matches:
@@ -49,6 +79,11 @@ def get_neighbours(string):
 
 
 def get_neighbours_in_dict():
+    """
+    Parse and search for all the neighbours of the countries in the url from Wikipedia.
+
+    :return: A dictionary containing the neighbours of each country.
+    """
     file_path = 'crawling/neighbours.txt'
     file = open(file_path, 'r', encoding='utf-16')
     html_line = file.readline()
