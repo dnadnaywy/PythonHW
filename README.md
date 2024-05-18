@@ -1,5 +1,3 @@
 # PythonHW
 
-Panainte Diana-Teodora
-
-* 04.01.2024: languages wikipedia page crawled safely
+* homework for python course from Faculty of Computer Science (FII), University 'Alexandru-Ioan Cuza', Iasi, Romania
